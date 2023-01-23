@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini ToDo List</title>
+</head>
+<body>
+    <form action="" id="form">
+        <input autocomplete=off type="text" name="champ" id="champ" placeholder="entrez une tache...">
+        <input type="submit" name="submit" id="ajouter" value="+">
+        <ol>
+
+        </ol>
+    </form>
+    <script>
+        let champ = document.getElementById("champ")
+        let li;
+        let text;
+        let btn
+        let btnValue;
+        let ajouter = document.querySelector("#ajouter");
+        ajouter.addEventListener("click", function(e){
+           
+         
+             e.preventDefault();
+             console.log(champ.value)
+             li = document.createElement('li');
+             text = document.createTextNode(champ.value)
+             btn = document.createElement("button");
+             btnValue = document.createTextNode("-");
+             btn.appendChild(btnValue);
+             
+             li.appendChild(text)
+             li.appendChild(btn)
+           
+             document.querySelector("ol").appendChild(li)
+             champ.value=""
+             
+        })
+        
+        
+        
+    </script>
+</body>
+</html>
